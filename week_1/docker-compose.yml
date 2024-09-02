@@ -3,5 +3,5 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    # volumes:
-    #   - . : /app/
+    volumes:  # need to mount Docker volume
+      - .:/app/

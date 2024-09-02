@@ -1,0 +1,14 @@
+services:
+  web_scraper:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app/
+
+    # NEW: since GUnicorn runs inside the Docker container,
+    # in order to communicate to GUnicorn from outside the
+    # container, we need to map a port on our machine to a
+    # port on the container. Here we map 8003 to 8003.
+    ports:
+      - "8003:8003" 
