@@ -1,5 +1,0 @@
-wget==3.2
-
-# the container must have Flask and GUnicorn installed
-Flask==3.0.3 
-gunicorn==23.0.0 
