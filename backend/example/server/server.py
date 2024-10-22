@@ -2,23 +2,21 @@ from flask import Flask
 from flask import request, make_response, jsonify
 import traceback
 
-from download import download
+from backup import backup_and_compute_md5
 
 app = Flask(__name__)
 
 
 # A POST request is used whenever we change the server's state
 # Here we're donwloading a file
-@app.route('/upload', methods=["POST"])
+@app.route('/backup', methods=["POST"])
 def upload():
     try:
-        request_json = request.get_json()
-        
-        contents = request_json["contents"]
+        request_json = request.get_json()        
         filename = request_json["filename"]
         
         # process the request
-        server_hash = download(filename, contents)
+        server_hash = backup_and_compute_md5(filename)
     
     except Exception as e:
         traceback.print_exc()  # print the exception

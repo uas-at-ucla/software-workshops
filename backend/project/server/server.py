@@ -14,9 +14,9 @@ def process_image():
 
     ### YOUR CODE HERE ###
 
-        # get the image data
+    # get the image data
         
-        # call get_coords, passing in the image bytes
+    # call get_coords, passing in the image bytes
 
     # if an exception occurred, print the exception return 400
 
