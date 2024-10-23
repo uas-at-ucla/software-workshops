@@ -1,24 +1,23 @@
-import hashlib
 import requests
-
+import hashlib
 
 def main():
     filename = 'ssn.txt'
 
-    # send a request to the server
-    request_json = {
-        "filename": filename
-    }    
-    response = requests.post("http://localhost:5000/backup", json=request_json)
+    response = requests.post('http://localhost:5000', json={'filename': filename})
+    response_json = response.json()
 
-    # check for changes
-    with open(f'../data/{filename}', 'rb') as f:
+    # open the file
+    with open(f"../data/{filename}", 'rb') as f:
         contents = f.read()
 
-    client_hash = hashlib.md5(contents).hexdigest()
-    assert response.json()['hash'] == client_hash, "Hashes do not match."
+    # compare the checksums
+    local_checksum = hashlib.md5(contents).hexdigest()
+    print(local_checksum)
 
-    print("Success")
+    if local_checksum == response_json['checksum']:
+        print('Success')
+    else:
+        print(response_json)
 
-if __name__ == "__main__":
-    main()
+main()

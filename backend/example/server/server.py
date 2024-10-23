@@ -1,30 +1,23 @@
-from flask import Flask
-from flask import request, make_response, jsonify
-import traceback
-
-from backup import backup_and_compute_md5
+from flask import Flask, request, jsonify, make_response
+from backup import backup_and_compute_checksum
 
 app = Flask(__name__)
 
-
-# A POST request is used whenever we change the server's state
-# Here we're donwloading a file
-@app.route('/backup', methods=["POST"])
-def upload():
+@app.route("/", methods=['POST'])
+def backup():
     try:
-        request_json = request.get_json()        
-        filename = request_json["filename"]
-        
-        # process the request
-        server_hash = backup_and_compute_md5(filename)
-    
+        req = request.get_json()
+        filename = req['filename']
+
+
+        response_json = {
+            'message': f"Successfully backed up {filename}",
+            'checksum': backup_and_compute_checksum(filename)
+        }
     except Exception as e:
-        traceback.print_exc()  # print the exception
-        return make_response("Invalid request. " + str(e), 400)
+        response_json = {
+            'message': f"Error: {e}",
+            'checksum': ""
+        }
     
-    # send response
-    response_json = {
-        "message": f"Successfully stored file {filename}",
-        "hash": server_hash
-    }
     return jsonify(response_json)
