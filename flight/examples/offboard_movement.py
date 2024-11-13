@@ -5,6 +5,7 @@ import asyncio
 from mavsdk import System
 from mavsdk.offboard import (VelocityBodyYawspeed)
 
+
 async def run():
     # Define drone and connect to it
     drone = System()
@@ -14,7 +15,7 @@ async def run():
     print("Waiting for drone to connect...")
     async for state in drone.core.connection_state():
         if state.is_connected:
-            print(f"-- Connected to drone!")
+            print("-- Connected to drone!")
             break
 
         # Zero velocity position

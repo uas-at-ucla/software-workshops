@@ -1,7 +1,9 @@
+#!/usr/bin/env python3
 # Take off and land routine
+
 import asyncio
 from mavsdk import System
-#!/usr/bin/env python3
+
 
 async def run():
     # Define drone and connect to it
@@ -12,7 +14,7 @@ async def run():
     print("Waiting for drone to connect...")
     async for state in drone.core.connection_state():
         if state.is_connected:
-            print(f"-- Connected to drone!")
+            print("-- Connected to drone!")
             break
 
     # Set takeoff altitude to 5 meters
@@ -33,7 +35,6 @@ async def run():
 
         # Hover for some time
         await asyncio.sleep(10)
-
 
     except Exception as e:
         print(f"Exception: {e}")
