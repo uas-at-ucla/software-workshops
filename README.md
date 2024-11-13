@@ -21,12 +21,10 @@
 - [Slides](https://docs.google.com/presentation/d/1cOrgiwGQyhu9IgvpCgisfMDgG0T6Wg0PCy-ZPfJdk8E/edit#slide=id.g311f17c0440_2_2)
 - Recording to be uploaded soon
 
----
-
-Kahoot questions covering OpenCV and Backend [here](https://docs.google.com/document/d/1ffZ_ti_7WKDjJW8zYtqnVGwkkNS-Rlc51RRtuBZTw8s/edit?usp=sharing).
-
----
-
 ### Future workshops:
 - Neural Networks with Pytorch
 - Docker + Unit Testing + CI
+
+---
+
+Kahoot questions covering OpenCV and Backend [here](https://docs.google.com/document/d/1ffZ_ti_7WKDjJW8zYtqnVGwkkNS-Rlc51RRtuBZTw8s/edit?usp=sharing).
