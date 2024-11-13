@@ -24,3 +24,9 @@
 ---
 
 Kahoot questions covering OpenCV and Backend [here](https://docs.google.com/document/d/1ffZ_ti_7WKDjJW8zYtqnVGwkkNS-Rlc51RRtuBZTw8s/edit?usp=sharing).
+
+---
+
+### Future workshops:
+- Neural Networks with Pytorch
+- Docker + Unit Testing + CI
