@@ -19,9 +19,9 @@ async def run():
             break
 
         # Zero velocity position
-        await drone.offboard.set_velocity_body(
-            VelocityBodyYawspeed(0.0, 0.0, 0.0, 0.0)
-        )
+    await drone.offboard.set_velocity_body(
+        VelocityBodyYawspeed(0.0, 0.0, 0.0, 0.0)
+    )
 
     # Try to arm and exit if unable
     try:
