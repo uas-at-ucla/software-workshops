@@ -14,12 +14,28 @@ def process_image():
 
     ### YOUR CODE HERE ###
 
-    # get the image data
-        
-    # call get_coords, passing in the image bytes
+    try:
+        # get the image data
+        img_data = request.get_json()
+        img_num = img_data['img_name']
+            
+        # call get_coords, passing in the image bytes
+        x_dist, y_dist = get_coords(img_num)
 
-    # if an exception occurred, print the exception return 400
+        response_json = {
+            'x_dist': x_dist,
+            'y_dist': y_dist
+        }
+
+    except Exception as e:
+        # if an exception occurred, print the exception return 400
+        response_json = {
+            'x_dist': -1,
+            'y_dist': -1
+        }
+        
+        print("Warning - Exception Occurred: ", e)
+        return 400
 
     # return the coords in a json response
-
-    pass  # DELETE THIS
+    return jsonify(response_json)

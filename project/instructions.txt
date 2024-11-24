@@ -1,0 +1,5 @@
+To run sim:
+1. OpenVS Code with file to run routes/commands
+2. Change directory into PX4-Autopilot folder
+3. In terminal, type
+    make px4_sitl gazebo-classic_[drone_model]__[gazebo_world]

@@ -34,11 +34,13 @@ def main():
     for i in range(1, 9):
         image_name = f"i{i}.jpg"
 
-        ### YOUR CODE HERE ###
-
         # send a post request holding the image name to the server at /odlc endpoint
+        response = requests.post('http://localhost:5000/odlc', json={'img_name': image_name})
+        reponse_json = response.json()
 
         # get the coordinates from the response and save it in x_dist and y_dist
+        x_dist = reponse_json['x_dist']
+        y_dist = reponse_json['y_dist']
 
         # add the coordinates to the your_coords array
         your_coords.append((x_dist, y_dist))
