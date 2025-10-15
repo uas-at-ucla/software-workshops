@@ -4,6 +4,13 @@ import asyncio
 from mavsdk import System
 
 
+async def point_gimbal_down():
+    print("Pointing camera gimbal straight down")
+    await drone.gimbal.take_control(ControlMode.PRIMARY)
+    await drone.gimbal.set_mode(GimbalMode.YAW_LOCK)
+    await drone.gimbal.set_pitch_and_yaw(-90,0)
+    await asyncio.sleep(5)
+
 async def run():
     # Define drone and connect to it
     drone = System()
