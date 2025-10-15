@@ -9,7 +9,7 @@ Feel free to use any functions within the MAVSDK-Python Library and any additona
 
 ## Tasks
 ### Centering and Hovering Over Circle 
-![Drone Over Stationary Circle](https://github.com/user-attachments/assets/ac628768-110b-4414-be68-8a754b9e3995)
+![Drone Over Stationary Circle](mavsdk/assets/images/red_circle.png)
 
 In this task the drone spawns next to a red circle of which the drone must center on while in the air. Use and adapt the Week 1 OpenCV workshop color detection code in order to determine the offset of the drone and the red circle. Use this offset in your flight code to adjust the drone accordingly. Use a flask server to communicate images and offsets sent and recieved by flight/vision code. 
 
@@ -18,7 +18,7 @@ Once the drone is directly over the circle, the drone will land.
 The world name is "red_circle".
 
 ### Following a Curvy Path
-![Drone Over Curvy Path](https://github.com/user-attachments/assets/c3df1888-9a03-4dbe-b9dd-e881a9329803)
+![Drone Over Curvy Path](mavsdk/assets/images/curvy_path.png)
 
 In this task the drone spawns onto a long continous curvy path of which the drone must navigate to the end of. Similarily to the last task, use a vision server to analyze images sent by flight code to move along the path and adjust during curves.
 
@@ -27,7 +27,7 @@ Once the drone reaches the end of the line, it will land.
 The world name is "path".
 
 ### Following a Moving Circle
-![Drone Over Stationary Circle](https://github.com/user-attachments/assets/58396f92-9f16-4d63-959d-31dee838ad69)
+![Drone Over Stationary Circle](mavsdk/assets/images/moving_circle.gif)
 
 In this final task, the drone spawns near a red circle continously moving in a circle. The drone must take off and begin to follow the red circle when it comes into view again. The drone will continue to follow the red circle for an indefinite amount of time while trying to stay centered over it at all times.
 

@@ -19,7 +19,7 @@
 
 ### MAVSDK
 - [Slides](https://docs.google.com/presentation/d/1cOrgiwGQyhu9IgvpCgisfMDgG0T6Wg0PCy-ZPfJdk8E/edit#slide=id.g311f17c0440_2_2)
-- Recording to be uploaded soon
+- [Recording](https://youtu.be/nNokr18Qa54)
 
 ### Future workshops:
 - Neural Networks with Pytorch
