@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 
 import asyncio
+import os
 from mavsdk import System
+from camera import Video
+from mavsdk.gimbal import (GimbalMode, ControlMode)
 
 
-async def point_gimbal_down():
+async def point_gimbal_down(drone):
     print("Pointing camera gimbal straight down")
     await drone.gimbal.take_control(ControlMode.PRIMARY)
     await drone.gimbal.set_mode(GimbalMode.YAW_LOCK)
